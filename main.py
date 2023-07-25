@@ -1,9 +1,13 @@
+from utils.funcoes_auxiliares import *
+from utils.valida_cpf import *
 validador = True
 clientes = []
 
+
+
 print("Seja bem vindo(a) ao sistema de gerenciamento de carteira de ações da Nuclea. Selecione uma das opções abaixo:")
 
-while(validador):
+while validador:
     print("1 - Cadastrar cliente")
     print("2 - Cadastrar ação")
     print("3 - Realizar análise da carteira")
@@ -16,14 +20,17 @@ while(validador):
         print("Informe os dados do cliente: ")
         cliente = {
             "nome": input("Nome: "),
-            "cpf": input("CPF: "),
+            "cpf": valida_cpf(),
             "rg": input("RG: "),
             "data_nascimento": input("Data de nascimento: "),
-            "cep":input("CEP: "),
+            "cep": input("CEP: "),
             "numero_casa": input("Número casa: ")
         }
         clientes.append(cliente)
         print(clientes)
+        validador = retornar_menu_principal()
+
+
     elif opcao == "2":
         pass
     elif opcao == "3":

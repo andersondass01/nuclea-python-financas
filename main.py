@@ -1,5 +1,7 @@
 from utils.funcoes_auxiliares import *
 from utils.valida_cpf import *
+from utils.valida_data import *
+from utils.valida_rg import *
 validador = True
 clientes = []
 
@@ -21,8 +23,8 @@ while validador:
         cliente = {
             "nome": input("Nome: "),
             "cpf": valida_cpf(),
-            "rg": input("RG: "),
-            "data_nascimento": input("Data de nascimento: "),
+            "rg": valida_rg(),
+            "data_nascimento": valida_data_nascimento(),
             "cep": input("CEP: "),
             "numero_casa": input("Número casa: ")
         }

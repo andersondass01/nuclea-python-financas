@@ -14,5 +14,10 @@ def valida_cpf():
         else:
             print("CPF inválido. Tente novamente: ")
 
+def gera_cpf():
+    cpf = CPF()
+    cpf_gerado = cpf.generate()
+    return cpf_gerado
+
 
 

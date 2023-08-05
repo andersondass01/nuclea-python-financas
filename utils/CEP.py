@@ -17,6 +17,8 @@ def busca_cep(cep):
                 "cidade": data['localidade'],
                 "estado": data['uf']
             }
+            if cep['complemento'] == "":
+                cep['complemento'] = "Sem complemento"
 
             return cep
 

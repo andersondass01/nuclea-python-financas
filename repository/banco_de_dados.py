@@ -1,5 +1,10 @@
 import psycopg2
 import os
+from utils.valida_cpf import valida_cpf
+from utils.valida_rg import valida_rg
+from utils.CEP import valida_cep
+from utils.valida_data import valida_data_nascimento
+
 
 class BancoDeDados:
     def __init__(self):
@@ -10,12 +15,11 @@ class BancoDeDados:
         self.cursor.close()
         self.connection.close()
 
-    def insert(self,cliente):
+    def insert(self, cliente):
         print("Inserindo cliente no banco de dados")
         insert_query = """INSERT INTO public.cliente( nome, cpf, rg, data_nascimento, cep, lougradouro, complemento, 
         bairro, cidade, estado, numero_residencia)
 	    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
-
         values = (
             cliente['nome'],
             cliente['cpf'],
@@ -27,14 +31,14 @@ class BancoDeDados:
             cliente['cep']['bairro'],
             cliente['cep']['cidade'],
             cliente['cep']['estado'],
-            cliente['numero_casa']
+            cliente['numero_residencia']
         )
         self.cursor.execute(insert_query, values)
         self.connection.commit()
 
     def select(self, cliente):
         print("Buscando clientes no banco de dados...")
-        select_query = "SELECT * FROM cliente where cpf ='"+ cliente['cpf'] + "';"
+        select_query = "SELECT * FROM cliente where cpf ='" + cliente['cpf'] + "';"
         self.cursor.execute(select_query)
         clientes = self.cursor.fetchall()
         for cliente in clientes:
@@ -51,6 +55,7 @@ class BancoDeDados:
         }
 
         return parametros_conexao
+
 
 conexao = BancoDeDados()
 conexao.select({"cpf": "10178117099"})
@@ -93,3 +98,14 @@ insert_cliente_banco_de_dados("Vanessa", "10178117099", "10.507.087-7", "1996-08
                               "Jardim", "Londrina", "PR", "105")
 seleciona_cliente_banco_de_dados()
 """
+cliente_teste = {}
+banco_de_dados = BancoDeDados()
+cliente_teste = {
+    'nome': input("Nome: "),
+    'cpf': valida_cpf(),
+    'rg': valida_rg(),
+    'data_nascimento': valida_data_nascimento(),
+    'cep': valida_cep(),
+    'numero_residencia': input("Número casa: ")
+}
+print(banco_de_dados.insert(cliente_teste))

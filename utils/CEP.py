@@ -9,14 +9,16 @@ def busca_cep(cep):
         if "erro" not in data:
             dados_endereco = data
 
-            endereco = {
+            cep = {
                 "CEP": data['cep'],
-                "Logradouro": data['logradouro'],
-                "Bairro": data['bairro'],
-                "Cidade": data['localidade'],
-                "Estado": data['uf']
+                "logradouro": data['logradouro'],
+                'complemento': input("Complemento: "),
+                "bairro": data['bairro'],
+                "cidade": data['localidade'],
+                "estado": data['uf']
             }
-            return endereco
+
+            return cep
 
 def valida_cep():
     print("Consulta do CEP - ViaCEP")
@@ -26,6 +28,5 @@ def valida_cep():
 
         if cep_input.isdigit() and len(cep_input) == 8:
             return busca_cep(cep_input)
-
 
 

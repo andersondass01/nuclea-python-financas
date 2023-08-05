@@ -3,10 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def carteira_analise(lista):
-
     star_date = "2020-01-01"
     end_date = "2023-01-01"
-
    # lista = ['ABCB4.SA', 'AGRO3.SA', 'BBAS3.SA']
 
     df = pd.DataFrame()

@@ -1,5 +1,6 @@
 from moldes.cliente import Cliente
 from moldes.ordem import Ordem
+from moldes.relatorio import Relatorio
 
 print("Seja bem vindo(a) ao sistema de gerenciamento de carteira de ações da Nuclea. Selecione uma das opções abaixo:")
 
@@ -10,7 +11,7 @@ def main():
         print("1 - Cliente")
         print("2 - Cadastrar ordem de compra")
         print("3 - Realizar análise da carteira")
-        print("4 - Imprimir relatório da carteira")
+        print("4 - Gerar relatórios")
         print("5 - Sair")
 
         opcao = input("Digite a opção desejada: ")
@@ -44,7 +45,18 @@ def main():
             acao.consultar_ordem()
 
         elif opcao == "4":
-            pass
+            acao = Relatorio()
+            print("Bem vindo ao menu de Relatório. Selecione uma das opções abaixo:")
+            print("1 - Pesquisar ação por ticket")
+            print("2 - Consultar relatório da carteira")
+            print("3 - Voltar ao menu principal")
+            opcao_relatorio = input("Digite a opção desejada: ")
+            if opcao_relatorio == "1":
+                acao.pesquisar_acao()
+            elif opcao_relatorio == "2":
+                acao.relatorio_carteira()
+            else:
+                print("Retornando ao menu principal...")
         elif opcao == "5":
             print("Obrigado por utilizar o sistema de gerenciamento de carteira de ações da Nuclea. Até a próxima!")
             validador = False

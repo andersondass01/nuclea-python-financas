@@ -1,3 +1,4 @@
+from carteira import carteira_analise
 from repository.banco_de_dados import BancoDeDados
 
 
@@ -25,5 +26,5 @@ class Ordem:
         self.cliente = {
             'cpf': self.cpf
         }
-        self.banco_de_dados.select_tickets(self.cliente)
+        carteira_analise(self.banco_de_dados.select_tickets(self.cliente))
 

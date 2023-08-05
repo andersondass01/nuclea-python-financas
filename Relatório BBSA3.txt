@@ -1,0 +1,4 @@
+Relatório da ação: 3
+Empty DataFrame
+Columns: [Open, High, Low, Close, Adj Close, Volume]
+Index: []

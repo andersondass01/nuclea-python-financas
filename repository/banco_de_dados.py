@@ -105,9 +105,9 @@ class BancoDeDados:
         select_query = "SELECT ordem.ticket FROM cliente, ordem where cliente.id = ordem.cliente_id AND cliente.cpf='" + cliente['cpf'] + "';"
         self.cursor.execute(select_query)
         tickets = self.cursor.fetchall()
-        for ticket in tickets:
-            print(ticket)
-        carteira_analise(tickets)
+        # for ticket in tickets:
+        #     print(ticket)
+        # carteira_analise(tickets)
 
         return tickets
 

@@ -28,5 +28,5 @@ class Relatorio:
 
         for ticket in tickets:
             self.acao = str(ticket).replace("('", "").replace("',)", "")
-            nome_arquivo = "Relatório " + self.acao + ' CPF:' + self.cpf + '.txt'
+            nome_arquivo = "Relatório " + self.acao + ' CPF ' + self.cpf + '.txt'
             obter_dados_acao(self.acao, nome_arquivo)

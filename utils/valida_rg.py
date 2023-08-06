@@ -11,4 +11,3 @@ def valida_rg():
             return rg
         else:
             print("RG inválido. Tente novamente: ")
-

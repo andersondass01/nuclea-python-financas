@@ -48,7 +48,7 @@ def main():
             acao = Relatorio()
             print("Bem vindo ao menu de Relatório. Selecione uma das opções abaixo:")
             print("1 - Pesquisar ação por ticket")
-            print("2 - Consultar relatório da carteira")
+            print("2 - Consultar relatório da carteira por CPF")
             print("3 - Voltar ao menu principal")
             opcao_relatorio = input("Digite a opção desejada: ")
             if opcao_relatorio == "1":

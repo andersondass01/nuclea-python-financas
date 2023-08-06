@@ -30,5 +30,3 @@ def valida_cep():
 
         if cep_input.isdigit() and len(cep_input) == 8:
             return busca_cep(cep_input)
-
-

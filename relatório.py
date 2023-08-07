@@ -9,7 +9,7 @@ def obter_dados_acao(ticket, nome_arquivo):
         with open(nome_arquivo, 'w') as arquivo:
             arquivo.write("Relatório da ação: " + ticket + "\n")
             arquivo.write(str(acao.tail()))
-            #arquivo.close()
+            arquivo.close()
 
         print(f"Relatório exportado com sucesso para o arquivo '{nome_arquivo}'.")
 

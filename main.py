@@ -9,7 +9,7 @@ def main():
     validador = True
     while validador:
         print("1 - Cliente")
-        print("2 - Cadastrar ordem de compra")
+        print("2 - Ordem")
         print("3 - Realizar análise da carteira")
         print("4 - Gerar relatórios")
         print("5 - Sair")
@@ -38,11 +38,25 @@ def main():
                 print("Retornando ao menu principal...")
 
         elif opcao == "2":
-            acao = Ordem()
-            acao.cadastrar_ordem()
+            print("Bem vindo ao menu de Ordem. Selecione uma das opções abaixo:")
+            print("1 - Cadastrar ordem")
+            print("2 - Voltar ao menu principal")
+            opcao_ordem = input("Digite a opção desejada: ")
+            if opcao_ordem == "1":
+                acao = Ordem()
+                acao.cadastrar_ordem()
+            else:
+                print("Retornando ao menu principal...")
         elif opcao == "3":
-            acao = Ordem()
-            acao.consultar_ordem()
+            print("Bem vindo ao menu de Análise de Carteira. Selecione uma das opções abaixo:")
+            print("1 - Consultar carteira por CPF")
+            print("2 - Voltar ao menu principal")
+            opcao_analise = input("Digite a opção desejada: ")
+            if opcao_analise == "1":
+                acao = Ordem()
+                acao.consultar_ordem()
+            else:
+                print("Retornando ao menu principal...")
 
         elif opcao == "4":
             acao = Relatorio()

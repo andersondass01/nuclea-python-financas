@@ -29,5 +29,5 @@ class Ordem:
         self.cliente = {
             'cpf': self.cpf
         }
-        carteira_analise(self.banco_de_dados.select_tickets(self.cliente))
+        carteira_analise(self.banco_de_dados.select_tickers(self.cliente))
 

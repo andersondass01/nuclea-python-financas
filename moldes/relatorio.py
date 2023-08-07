@@ -21,7 +21,7 @@ class Relatorio:
         self.cliente = {
             'cpf': self.cpf
         }
-        tickets = self.banco_de_dados.select_tickets(self.cliente)
+        tickets = self.banco_de_dados.select_tickers(self.cliente)
         if len(tickets) == 0:
             print("Cliente não possui ações.")
             return

@@ -125,14 +125,14 @@ class BancoDeDados:
             print(e)
 
 
-    def select_tickets(self, cliente):
+    def select_tickers(self, cliente):
         print("Buscando ações do cliente no banco de dados...")
         try:
             select_query = "SELECT ordem.ticket FROM cliente, ordem where cliente.id = ordem.cliente_id AND cliente.cpf='" + cliente['cpf'] + "';"
             self.cursor.execute(select_query)
-            tickets = self.cursor.fetchall()
+            tickers = self.cursor.fetchall()
 
-            return tickets
+            return tickers
         except Exception as e:
             print("Erro ao buscar ações do cliente no banco de dados")
             print(e)
